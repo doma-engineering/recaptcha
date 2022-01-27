@@ -38,9 +38,9 @@ defmodule Recaptcha.Http do
   """
   @spec request_verification(binary, Keyword.t) :: {:ok, map} | {:error, [atom]}
   def request_verification(body, options \\ []) do
-    timeout = options[:timeout] || Config.get_env(:recaptcha, :timeout, 5000)
-    url = Config.get_env(:recaptcha, :verify_url, @default_verify_url)
-    json = Application.get_env(:recaptcha, :json_library, Jason)
+    timeout = options[:timeout] || Config.get_env(:doma_recaptcha, :timeout, 5000)
+    url = Config.get_env(:doma_recaptcha, :verify_url, @default_verify_url)
+    json = Application.get_env(:doma_recaptcha, :json_library, Jason)
 
     opts = [{:timeout, timeout} | options]
     result =

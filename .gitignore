@@ -24,3 +24,6 @@ recaptcha-*.tar
 
 # Temporary files for e.g. tests.
 /tmp/
+
+# Secrets
+config/*secret*

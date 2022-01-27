@@ -21,7 +21,7 @@ defmodule Recaptcha.Template do
   """
   def display(options \\ []) do
     public_key =
-      options[:public_key] || Config.get_env(:recaptcha, :public_key)
+      options[:public_key] || Config.get_env(:doma_recaptcha, :public_key)
 
     callback =
       if options[:size] == "invisible" && is_nil(options[:callback]) do

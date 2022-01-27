@@ -8,7 +8,7 @@ defmodule Recaptcha do
 
   alias Recaptcha.{Config, Http, Response}
 
-  @http_client Application.get_env(:recaptcha, :http_client, Http)
+  @http_client Application.get_env(:doma_recaptcha, :http_client, Http)
 
   @doc """
   Verifies a reCAPTCHA response string.
@@ -53,7 +53,7 @@ defmodule Recaptcha do
 
   defp request_body(response, options) do
     body_options = Keyword.take(options, [:remote_ip, :secret])
-    application_options = [secret: Config.get_env(:recaptcha, :secret)]
+    application_options = [secret: Config.get_env(:doma_recaptcha, :secret)]
 
     # override application secret with options secret if it exists
     application_options

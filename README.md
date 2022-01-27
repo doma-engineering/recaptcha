@@ -24,22 +24,22 @@ if you have any problems with migrating.
 
 ## Installation
 
-Add `:recaptcha` to your `mix.exs` dependencies:
+Add `:doma_recaptcha` to your `mix.exs` dependencies:
 
 ```elixir
   defp deps do
     [
-      {:recaptcha, "~> 3.0"},
+      {:doma_recaptcha, "~> 3.0"},
     ]
   end
 ```
 
-List `:recaptcha` as an application dependency:
+List `:doma_recaptcha` as an application dependency:
 
 ```elixir
   def application do
     [
-      extra_applications: [:recaptcha]
+      extra_applications: [:doma_recaptcha]
     ]
   end
 ```
@@ -51,7 +51,7 @@ Run `mix do deps.get, compile`
 By default the public and private keys are loaded via the `RECAPTCHA_PUBLIC_KEY` and `RECAPTCHA_PRIVATE_KEY` environment variables.
 
 ```elixir
-config :recaptcha,
+config :doma_recaptcha,
   public_key: {:system, "RECAPTCHA_PUBLIC_KEY"},
   secret: {:system, "RECAPTCHA_PRIVATE_KEY"}
 ```
@@ -61,7 +61,7 @@ config :recaptcha,
 By default `reCaptcha` will use `Jason` to decode JSON responses, this can be changed as such:
 
 ```elixir
-config :recaptcha, :json_library, Poison
+config :doma_recaptcha, :json_library, Poison
 ```
 
 ## Usage
@@ -153,14 +153,14 @@ Option                  | Action                                                
 In order to test your endpoints you should set the secret key to the following value in order to receive a positive result from all queries to the Recaptcha engine.
 
 ```elixir
-config :recaptcha,
+config :doma_recaptcha,
   secret: "6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe"
 ```
 
 Setting up tests without network access can be done also. When configured as such a positive or negative result can be generated locally.
 
 ```elixir
-config :recaptcha,
+config :doma_recaptcha,
   http_client: Recaptcha.Http.MockClient,
   secret: "6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe"
 
