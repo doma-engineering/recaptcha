@@ -2,11 +2,11 @@ defmodule Recaptcha.Mixfile do
   use Mix.Project
 
   @source_url "https://github.com/samueljseay/recaptcha"
-  @version "3.1.0"
+  @version "3.1.1-doma"
 
   def project do
     [
-      app: :recaptcha,
+      app: :doma_recaptcha,
       version: @version,
       elixir: "~> 1.6",
       description: description(),
@@ -41,6 +41,7 @@ defmodule Recaptcha.Mixfile do
     """
     A simple reCaptcha package for Elixir applications, provides verification
     and templates for rendering forms with the reCaptcha widget.
+    Forked for maintenance purposes by doma.
     """
   end
 
@@ -58,9 +59,12 @@ defmodule Recaptcha.Mixfile do
   defp package do
     [
       files: ["lib", "mix.exs", "README.md", "LICENSE.md"],
-      maintainers: ["Samuel Seay", "Nikita Sobolev", "Michael JustMikey"],
+      maintainers: ["doma.dev"],
       licenses: ["MIT"],
-      links: %{"GitHub" => "https://github.com/samueljseay/recaptcha"}
+      links: %{
+        "Upatream" => "https://github.com/samueljseay/recaptcha",
+        "Github" => "https://github.com/doma-engineering/recaptcha"
+      }
     ]
   end
 
